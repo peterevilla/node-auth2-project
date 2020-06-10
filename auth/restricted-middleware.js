@@ -6,7 +6,6 @@ module.exports = (req, res, next) => {
   try {
    
     const token = req.headers.authorization
-
     if (token) {
       jwt.verify(token, secrets.jwtSecret, (err, decodedToken) => {
         if (err) {
